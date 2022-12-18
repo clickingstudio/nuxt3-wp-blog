@@ -27,7 +27,7 @@ export default async () => {
   };
 
   const getPost = async (slug: string) => {
-    return get<Post>(`posts?slug=${slug}&_embed=1`);
+   return useFetch<any>(`${wpUrl}/wp-json/wp/v2/posts?slug=${slug}&_embed=1`);
   };
 
   const getCatgories = async (fields: string = "name,slug,count") => {
